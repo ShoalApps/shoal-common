@@ -24,7 +24,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 
-/** A donation card in the host theme. The app supplies text, localisation and the heart icon. */
+/** Supporting Shoal: a bright card in the app's own colours. The app supplies text, localisation and the heart icon. */
 @Composable
 fun SupportCard(
     title: String,
