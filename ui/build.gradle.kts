@@ -30,8 +30,12 @@ dependencies {
     api(platform("androidx.compose:compose-bom:2026.09.00"))
     api("androidx.compose.runtime:runtime")
     api("androidx.compose.ui:ui")
-    implementation("androidx.compose.foundation:foundation")
+    api("androidx.compose.foundation:foundation") // InlineTextContent is part of the public API.
     implementation("androidx.compose.material3:material3")
+    implementation("androidx.compose.runtime:runtime-saveable")
+    implementation("androidx.core:core:1.19.1")
+    testImplementation("junit:junit:4.13.2")
+    testImplementation("org.json:json:20240303")
 }
 
 publishing {
