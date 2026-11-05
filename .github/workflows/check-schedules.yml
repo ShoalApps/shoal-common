@@ -1,0 +1,47 @@
+name: Check schedules across Shoal
+
+# A stopped schedule is silent, so look at every repo weekly. If anything has stopped, this run
+# fails, which emails the owner, and one issue here says what to do. Public data only, no secrets.
+on:
+  schedule:
+    - cron: "27 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      TITLE: Scheduled jobs have stopped
+    steps:
+      - name: Look at every active repo
+        run: |
+          set -euo pipefail
+          problems=""
+          # Repos whose schedules matter. Archived-for-now apps have nothing to keep up with.
+          for repo in squill angelfish butterflyfish shoal shoal-common shoalapps.github.io; do
+            stopped=$(gh api --paginate "repos/ShoalApps/$repo/actions/workflows" --jq '.workflows[] | select(.state == "disabled_inactivity") | .path')
+            for path in $stopped; do problems+="- \`$repo\`: \`$path\` was switched off by GitHub for inactivity. Run its keep-alive, or enable it in the Actions tab."$'\n'; done
+            last=$(gh run list -R "ShoalApps/$repo" -w "Keep schedules alive" -L 1 --json conclusion,createdAt --jq '.[0] | "\(.conclusion) \(.createdAt)"' 2>/dev/null || true)
+            state=${last%% *}; when=${last##* }
+            if [ -z "$last" ] || [ "$state" != "success" ]; then
+              problems+="- \`$repo\`: its last keep-alive run was \`${state:-missing}\`."$'\n'
+            elif [ "$(date -d "$when" +%s)" -lt "$(date -d '35 days ago' +%s)" ]; then
+              problems+="- \`$repo\`: its keep-alive last ran on $when, over 35 days ago."$'\n'
+            fi
+          done
+          existing=$(gh issue list -R "$GITHUB_REPOSITORY" --state open --search "\"$TITLE\" in:title" --json number --jq '.[0].number // empty')
+          if [ -z "$problems" ]; then
+            echo "Every schedule is running."
+            if [ -n "$existing" ]; then gh issue close "$existing" -R "$GITHUB_REPOSITORY" --comment "All running again."; fi
+            exit 0
+          fi
+          printf 'Apps can stop following updates while this is true.\n\n%s' "$problems" > body.md
+          cat body.md
+          if [ -n "$existing" ]; then gh issue edit "$existing" -R "$GITHUB_REPOSITORY" --body-file body.md
+          else gh issue create -R "$GITHUB_REPOSITORY" --title "$TITLE" --body-file body.md; fi
+          exit 1
