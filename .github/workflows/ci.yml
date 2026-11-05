@@ -1,0 +1,21 @@
+name: Validate shared UI
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: 17
+      # Like the apps, use the Android SDK preinstalled on ubuntu-latest.
+      - uses: gradle/actions/setup-gradle@v6
+      - name: Build and test
+        run: ./gradlew :ui:test :ui:assembleRelease --stacktrace
