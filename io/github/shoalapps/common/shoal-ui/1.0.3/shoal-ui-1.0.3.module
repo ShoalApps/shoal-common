@@ -1,0 +1,157 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "io.github.shoalapps.common",
+    "module": "shoal-ui",
+    "version": "1.0.3",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.8.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseVariantReleaseApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.compose",
+          "module": "compose-bom",
+          "version": {
+            "requires": "2026.09.00"
+          },
+          "attributes": {
+            "org.gradle.category": "platform"
+          },
+          "endorseStrictVersions": true
+        },
+        {
+          "group": "androidx.compose.runtime",
+          "module": "runtime"
+        },
+        {
+          "group": "androidx.compose.ui",
+          "module": "ui"
+        },
+        {
+          "group": "androidx.compose.foundation",
+          "module": "foundation"
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "shoal-ui-1.0.3.aar",
+          "url": "shoal-ui-1.0.3.aar",
+          "size": 56527,
+          "sha512": "a4cfd8c59fb39c11ad1b651a99ca14300268dd760744f48b3bb75d8b41ce8783800181b40e06e9577f01a57cb7c06d2b12159090ab9df0e93294c73a4cea5052",
+          "sha256": "0f96e2d681fa3c540961c00f5909f58effb9aedf7aa9ec1ebf64ccecb7dae944",
+          "sha1": "20c9bab098af7e3a8dd29b548ffd8bc7b08ce05a",
+          "md5": "268a7c0685c6c30d3bc83014765c6cb9"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.compose.material3",
+          "module": "material3"
+        },
+        {
+          "group": "androidx.compose.runtime",
+          "module": "runtime-saveable"
+        },
+        {
+          "group": "androidx.core",
+          "module": "core",
+          "version": {
+            "requires": "1.19.1"
+          }
+        },
+        {
+          "group": "androidx.compose",
+          "module": "compose-bom",
+          "version": {
+            "requires": "2026.09.00"
+          },
+          "attributes": {
+            "org.gradle.category": "platform"
+          },
+          "endorseStrictVersions": true
+        },
+        {
+          "group": "androidx.compose.runtime",
+          "module": "runtime"
+        },
+        {
+          "group": "androidx.compose.ui",
+          "module": "ui"
+        },
+        {
+          "group": "androidx.compose.foundation",
+          "module": "foundation"
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "shoal-ui-1.0.3.aar",
+          "url": "shoal-ui-1.0.3.aar",
+          "size": 56527,
+          "sha512": "a4cfd8c59fb39c11ad1b651a99ca14300268dd760744f48b3bb75d8b41ce8783800181b40e06e9577f01a57cb7c06d2b12159090ab9df0e93294c73a4cea5052",
+          "sha256": "0f96e2d681fa3c540961c00f5909f58effb9aedf7aa9ec1ebf64ccecb7dae944",
+          "sha1": "20c9bab098af7e3a8dd29b548ffd8bc7b08ce05a",
+          "md5": "268a7c0685c6c30d3bc83014765c6cb9"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseSourcePublication",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "shoal-ui-1.0.3-sources.jar",
+          "url": "shoal-ui-1.0.3-sources.jar",
+          "size": 7455,
+          "sha512": "1bfa14a2b261a415acd97308d8f6cf3a6ac694bec4c1bf2551e5805447814d71775666fe34e51ed15a006d04e03cd3c4d341b0a3f9664f69425d90f63241c1d8",
+          "sha256": "a6e6ec015209a7c88e9e03abdd1e210de5f96d3c9453273feecb3e672879c571",
+          "sha1": "f16c9d9abf1f58495db8f0013b56a095b734179b",
+          "md5": "aa11ed45c72b958d811168e09d554f1b"
+        }
+      ]
+    }
+  ]
+}
