@@ -1,0 +1,142 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "io.github.shoalapps.common",
+    "module": "shoal-ui",
+    "version": "1.0.1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.8.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseVariantReleaseApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.compose",
+          "module": "compose-bom",
+          "version": {
+            "requires": "2026.09.00"
+          },
+          "attributes": {
+            "org.gradle.category": "platform"
+          },
+          "endorseStrictVersions": true
+        },
+        {
+          "group": "androidx.compose.runtime",
+          "module": "runtime"
+        },
+        {
+          "group": "androidx.compose.ui",
+          "module": "ui"
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "shoal-ui-1.0.1.aar",
+          "url": "shoal-ui-1.0.1.aar",
+          "size": 9340,
+          "sha512": "c919338d76649a9f7ad9be4bd1e10c8988f14b8269290a91c1f5b094abb5ad32e39006f3d2c1f01b6debdff6970277b1187ce7bbf46edf1de6f87872e35c1666",
+          "sha256": "60ea7b78ba2977ba715ee7463ac713a675e716adcd037fa0204a000989227b2a",
+          "sha1": "b2b9333048bdf5430b29c424a56a3bb59686183d",
+          "md5": "ccc857bfff6b24f5f4830d6f4c6e28f8"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.compose.foundation",
+          "module": "foundation"
+        },
+        {
+          "group": "androidx.compose.material3",
+          "module": "material3"
+        },
+        {
+          "group": "androidx.compose",
+          "module": "compose-bom",
+          "version": {
+            "requires": "2026.09.00"
+          },
+          "attributes": {
+            "org.gradle.category": "platform"
+          },
+          "endorseStrictVersions": true
+        },
+        {
+          "group": "androidx.compose.runtime",
+          "module": "runtime"
+        },
+        {
+          "group": "androidx.compose.ui",
+          "module": "ui"
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "shoal-ui-1.0.1.aar",
+          "url": "shoal-ui-1.0.1.aar",
+          "size": 9340,
+          "sha512": "c919338d76649a9f7ad9be4bd1e10c8988f14b8269290a91c1f5b094abb5ad32e39006f3d2c1f01b6debdff6970277b1187ce7bbf46edf1de6f87872e35c1666",
+          "sha256": "60ea7b78ba2977ba715ee7463ac713a675e716adcd037fa0204a000989227b2a",
+          "sha1": "b2b9333048bdf5430b29c424a56a3bb59686183d",
+          "md5": "ccc857bfff6b24f5f4830d6f4c6e28f8"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseSourcePublication",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "shoal-ui-1.0.1-sources.jar",
+          "url": "shoal-ui-1.0.1-sources.jar",
+          "size": 1824,
+          "sha512": "35abee427c20398cb950d52f130cda797fa4098a0d3912d4621321c1569fd52585e31a9933bd17ae113418acaa5706cda4131947f1cae814cb6f46e3e9cc99ff",
+          "sha256": "8fdde309f903ea42450d4587b837a698bd3309af71e249b124f9c527e141f877",
+          "sha1": "bbcde110876e5e5f53a0684bff7417768f5a2bdb",
+          "md5": "1068d127d2419aa27d8f7f372c627c69"
+        }
+      ]
+    }
+  ]
+}
