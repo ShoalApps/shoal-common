@@ -16,3 +16,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "shoal-common"
 include(":ui")
+include(":expressive")

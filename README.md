@@ -45,6 +45,17 @@ manifest, so apps drop their own.
 Both are built against Sentry 8.62.0 and OkHttp 4.12.1 with `compileOnly`, so the app supplies
 them. Apps that don't use these classes (Squill) don't carry either.
 
+## Expressive shapes and settings tiles
+
+`io.github.shoalapps.common:shoal-expressive` (same version as `shoal-ui`, which it includes) has
+the Material 3 Expressive pieces: `PolygonShape`, `MorphShape`, `rememberMorphShape`,
+`rememberSpin`, `rememberBreath`, `CookieAvatar` and `ShapeIcon`, and the settings tiles
+`settingsGroup { row { shapes -> … } }`, `SettingsSection`, `SettingsToggle`, `SettingsLink`,
+`SettingsChoices`, `SettingsTile` and `settingsTileColors()`, all in
+`io.github.shoalapps.common.expressive`. It exposes Material 3 1.5.0-rc01, so an app compiles
+and runs against the same version as the tiles. Squill stays on stable Material 3 and uses only
+`shoal-ui`.
+
 ## How changes reach everyone
 
 Pull requests build and test the library. Each main push publishes

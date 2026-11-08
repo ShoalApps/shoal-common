@@ -18,4 +18,4 @@ jobs:
       # Like the apps, use the Android SDK preinstalled on ubuntu-latest.
       - uses: gradle/actions/setup-gradle@v6
       - name: Build and test
-        run: ./gradlew :ui:test :ui:assembleRelease --stacktrace
+        run: ./gradlew :ui:test :ui:assembleRelease :expressive:assembleRelease --stacktrace

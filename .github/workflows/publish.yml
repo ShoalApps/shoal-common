@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     # Only real library changes: a README edit shouldn't rebuild every app.
-    paths: ["ui/**", "build.gradle.kts", "settings.gradle.kts", "gradle/**", "gradle.properties"]
+    paths: ["ui/**", "expressive/**", ".github/scripts/**", "build.gradle.kts", "settings.gradle.kts", "gradle/**", "gradle.properties"]
   workflow_dispatch:
 
 permissions:
@@ -48,7 +48,7 @@ jobs:
           rsync -a --exclude='.git' build/maven/ build/repo/
 
       - name: Test, build and publish into the accumulated repository
-        run: ./gradlew :ui:test :ui:assembleRelease publishReleasePublicationToPagesRepository
+        run: ./gradlew :ui:test :ui:assembleRelease :expressive:assembleRelease publishReleasePublicationToPagesRepository
 
       - name: Preserve immutable versions and update the latest marker
         env:
