@@ -31,6 +31,20 @@ extraction. Squill supplies plain English and its filled heart; the other apps
 use `AppLanguage.text(...)` and their rounded heart. The existing row click label
 remains English, preserving its prior accessibility behaviour.
 
+## Error reports and self-updates
+
+`io.github.shoalapps.common.reports.ErrorReports` is the opt-in Sentry reporting the apps share:
+consent is kept under the same `telemetry` preferences, nothing identifying is sent, and the
+consent dialog takes the app's own English text and translate function. Construct it with an
+`ErrorReports.Config` (DSN, app tag, version, debug flag and the dialog's text).
+
+`io.github.shoalapps.common.update.GitHubUpdater(repo, asset)` finds, downloads and installs an
+app's newest `build-<n>` release. Its `InstallResultReceiver` is declared in this library's
+manifest, so apps drop their own.
+
+Both are built against Sentry 8.62.0 and OkHttp 4.12.1 with `compileOnly`, so the app supplies
+them. Apps that don't use these classes (Squill) don't carry either.
+
 ## How changes reach everyone
 
 Pull requests build and test the library. Each main push publishes

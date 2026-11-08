@@ -1,1 +1,8 @@
-<manifest />
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <application>
+        <!-- For GitHubUpdater. Apps that never install their own updates simply never receive it. -->
+        <receiver
+            android:name="io.github.shoalapps.common.update.InstallResultReceiver"
+            android:exported="false" />
+    </application>
+</manifest>

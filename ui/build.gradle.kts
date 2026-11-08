@@ -34,6 +34,10 @@ dependencies {
     implementation("androidx.compose.material3:material3")
     implementation("androidx.compose.runtime:runtime-saveable")
     implementation("androidx.core:core:1.19.1")
+    // Error reports and self-updates use the app's own Sentry and OkHttp: built against here, not
+    // shipped, so an app that doesn't use them (Squill) doesn't carry them.
+    compileOnly("io.sentry:sentry-android:8.62.0")
+    compileOnly("com.squareup.okhttp3:okhttp:4.12.1")
     testImplementation("junit:junit:4.13.2")
     testImplementation("org.json:json:20240303")
 }
