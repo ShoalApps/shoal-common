@@ -1,0 +1,171 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "io.github.shoalapps.common",
+    "module": "shoal-expressive",
+    "version": "1.0.5",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.8.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseVariantReleaseApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "io.github.shoalapps.common",
+          "module": "shoal-ui",
+          "version": {
+            "requires": "1.0.5"
+          }
+        },
+        {
+          "group": "androidx.compose",
+          "module": "compose-bom",
+          "version": {
+            "requires": "2026.09.00"
+          },
+          "attributes": {
+            "org.gradle.category": "platform"
+          },
+          "endorseStrictVersions": true
+        },
+        {
+          "group": "androidx.compose.material3",
+          "module": "material3",
+          "version": {
+            "requires": "1.5.0-rc01"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "shoal-expressive-1.0.5.aar",
+          "url": "shoal-expressive-1.0.5.aar",
+          "size": 31614,
+          "sha512": "ec6351519397da674e7a66d5338527c42ba778c230b4be543e340da778a016b7841b4335525ff9586bfd9e775aab16d2861890dadf7846bdec785c3130bc23af",
+          "sha256": "1d66c63be56f5e430def3f5522897df68147506a7fc9d8c266f5679f1c385179",
+          "sha1": "fb787b94b898adbf6712687d7f176240e2f2bec7",
+          "md5": "24a9b35080c7757007655d7c597bb884"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.compose.material",
+          "module": "material-icons-core",
+          "version": {
+            "requires": "1.7.8"
+          }
+        },
+        {
+          "group": "androidx.compose.animation",
+          "module": "animation"
+        },
+        {
+          "group": "androidx.graphics",
+          "module": "graphics-shapes",
+          "version": {
+            "requires": "1.1.0"
+          }
+        },
+        {
+          "group": "io.coil-kt.coil3",
+          "module": "coil-compose",
+          "version": {
+            "requires": "3.6.3"
+          }
+        },
+        {
+          "group": "io.github.shoalapps.common",
+          "module": "shoal-ui",
+          "version": {
+            "requires": "1.0.5"
+          }
+        },
+        {
+          "group": "androidx.compose",
+          "module": "compose-bom",
+          "version": {
+            "requires": "2026.09.00"
+          },
+          "attributes": {
+            "org.gradle.category": "platform"
+          },
+          "endorseStrictVersions": true
+        },
+        {
+          "group": "androidx.compose.material3",
+          "module": "material3",
+          "version": {
+            "requires": "1.5.0-rc01"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "shoal-expressive-1.0.5.aar",
+          "url": "shoal-expressive-1.0.5.aar",
+          "size": 31614,
+          "sha512": "ec6351519397da674e7a66d5338527c42ba778c230b4be543e340da778a016b7841b4335525ff9586bfd9e775aab16d2861890dadf7846bdec785c3130bc23af",
+          "sha256": "1d66c63be56f5e430def3f5522897df68147506a7fc9d8c266f5679f1c385179",
+          "sha1": "fb787b94b898adbf6712687d7f176240e2f2bec7",
+          "md5": "24a9b35080c7757007655d7c597bb884"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseSourcePublication",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "shoal-expressive-1.0.5-sources.jar",
+          "url": "shoal-expressive-1.0.5-sources.jar",
+          "size": 4585,
+          "sha512": "7edc66acca9c1aba8c684335419ba46d71dd0227c632e383a48d4a58641de29e2b6827390def7bf8b3087f797e72ebc14a7bc677cc50c1fa29912df0c3124930",
+          "sha256": "e1a850f361f827e83f1161c1e095ef7f824e1739f7d5370f15ff0fd46971c645",
+          "sha1": "c20f2d67f4088560c287dfdaf4a0f001f17550c4",
+          "md5": "8571b6d80c589d9cf734688df1c7dc27"
+        }
+      ]
+    }
+  ]
+}
